@@ -1,0 +1,6 @@
+* Sample of n-grams (top 50,000 words, where the first word in the string starts with "m")
+* This sample data is taken from the one billion word Corpus of Contemporary American English (COCA)
+(www.english-corpora.org/coca), which is the only corpus of English that is large, up-to-date, and is based on a wide range of genres.
+* For complete n-grams data from COCA, please see https://www.ngrams.info
+* For an explanation of the columns below, see https://www.wordfrequency.info/files.asp. This is format #2 on that page.
+----- Before converting file to Excel, remove the first seven lines, with the first line being the one starting with "rank"
