@@ -1,0 +1,26 @@
+In laparoscopic gallbladder surgery, carbon dioxide gas is forced into the 
+abdomen to separate the organs and improve visibility and access to the 
+gallbladder.  One side-effect of this is to separate the liver from the 
+diaphragm, where it is usually supported in part by surface tension.  The 
+resulting strain on the tissues attaching the two causes pain that is felt 
+in the shoulder (`referred pain').  This can be more severe than the 
+pain from the (relatively minor) surgical incisions.
+
+A randomised trial explored using suction to drain out the carbon dioxide 
+gas.  Pain in the shoulder, at the incision, and over the abdomen was 
+assessed twice daily for three days by a questionnaire.  There was no sign 
+of any difference in wound or abdominal pain.  You have data on shoulder 
+pain, which has been recoded to a 0-4 scale, where 0 is no pain, and 4 is 
+the most severe category reported.  The goal is to assess the 
+effectiveness of this intervention.
+
+The variables are
+
+id:  a patient identifier
+trt:  1 is post-operative suction, 2 is control
+sex: 1 is male, 2 is female
+age: in years
+pain: 0-4 scale
+time: 1 is the first, 6 is the last measurement on each person
+
+
