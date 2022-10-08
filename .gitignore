@@ -1,3 +1,4 @@
 **/tryModules
 **/mongoConnector/Pass.txt
 **/__pycache__
+**./ConectDb.py

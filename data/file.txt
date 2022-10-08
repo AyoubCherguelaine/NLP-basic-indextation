@@ -1,0 +1,8 @@
+In this tutorial, you will learn what a categorical variable is, along with three approaches for handling this type of data.
+
+Introduction¶
+A categorical variable takes only a limited number of values.
+
+Consider a survey that asks how often you eat breakfast and provides four options: "Never", "Rarely", "Most days", or "Every day". In this case, the data is categorical, because responses fall into a fixed set of categories.
+If people responded to a survey about which what brand of car they owned, the responses would fall into categories like "Honda", "Toyota", and "Ford". In this case, the data is also categorical.
+You will get an error if you try to plug these variables into most machine learning models in Python without preprocessing them first. In this tutorial, we'll compare three approaches that you can use to prepare your categorical data.

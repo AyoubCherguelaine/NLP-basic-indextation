@@ -1,20 +1,11 @@
 
-from pymongo import MongoClient
+import pymongo
 
 class db :
     def __init__(self ,keyInit=0):
-        v="DvWKB-9AYwpt4Vt"
-        key=""
-        if keyInit !=0:
-            key=keyInit
-        else:
-            path= 'mongoConnector/Pass.txt'
-            f= open(path, 'r')
-            key = f.read()
-            f.close()
-
-
-        client = MongoClient(key)
+        
+        client = pymongo.MongoClient(keyInit)
+        db = client.test
         
         
         self.db = client.gettingStarted
@@ -25,13 +16,12 @@ class db :
     
     def CreateCollection(self,name):
         col = self.db.create_collection(name)
-        self.Collections.append(col)
-        return name
-
-    def GetCollections(self):
         
-        self.Collections= self.db.list_collection_names()
-        return self.Collections
+        return col
+
+    def GetCollection(self,ColName):
+        
+        return self.db.get_collection(ColName)
         
         
         
@@ -56,4 +46,28 @@ class db :
 
         return doc
 
+    def GetDocs(self,ColName,query={}):
+        col=self.db.get_collection(ColName)    
+        d = col.find(query)
+        
+        return d    
+
+
+    def CountDoc(self,ColName,query={}):
+        col=self.db.get_collection(ColName)    
+        v = col.count_documents(query)
+        return v
+
+
+    def DeleteOne(self,ColName,query={}):
+        #{ "_id" : ObjectId("563237a41a4d68582c2509da") }
+        try:
+            col = self.db.get_collection(ColName)
+            col.orders.deleteOne( query )
+        except:
+            print('Err')
+
+         
+
+                
 
