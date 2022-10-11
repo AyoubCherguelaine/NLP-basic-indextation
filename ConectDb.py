@@ -7,13 +7,13 @@ doc = tk.Obj()
 db = db.db("mongodb://ayoubchergue:Ayoub12456789@ac-kefvrhv-shard-00-00.wrubdwv.mongodb.net:27017,ac-kefvrhv-shard-00-01.wrubdwv.mongodb.net:27017,ac-kefvrhv-shard-00-02.wrubdwv.mongodb.net:27017/?ssl=true&replicaSet=atlas-she98u-shard-0&authSource=admin&retryWrites=true&w=majority")
 
 
-db.AddDocument('documents',doc)
+#db.AddDocument('documents',doc)
 
-d = db.GetDocument('documents',{'name':'file'})
 
-print(d)
+def new_func():
+    col = db.GetCollection('documents')
+    return col
 
-docs = db.GetDocs('documents',{'name':'Approache'})
+col = new_func()
 
-for doc in docs:
-    print(doc)
+print(col.distinct('path'))

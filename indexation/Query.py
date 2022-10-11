@@ -1,26 +1,15 @@
-#import nltk
-#nltk.download('punkt')
-#nltk.download('PorterStemmer')
-#nltk.download('stopwords')
+
 from nltk import word_tokenize
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
-import string
 
+class query:
 
-
-class token:
-
-
-    def __init__(self,file):
-        self.name= file.split(".")[0]
-        self.path= './data/'+file
-        f= open(self.path, 'r')
-        self.content = f.read()
-        f.close()
+    def __init__(self,Query):
+        self.content= Query
         self.__tokinize()
-        self.__indexation()
-        self.__TermFrequencyCalc()
+        #self.__indexation()
+        #self.__TermFrequencyCalc()
 
     def __StopWord(self):
         #self.Tokens
@@ -52,8 +41,9 @@ class token:
         res = [token for token in self.Tokens if self.__has_alphanum(token)]
         self.Tokens=res
 
-    def __indexation(self):
-        WordList = self.Tokens
+    def indexation(self):
+        
+        WordList = self.Tokens.copy()
         self.index={}
         for w in WordList:
             if w =='***1':
@@ -63,26 +53,28 @@ class token:
             self.index[w]=l
             
             while not (WordList.count(w) == 0):
+                
+                #WordList.remove(w)
                 WordList[WordList.index(w) ]='***1'
+        
         return self.index        
 
-    def __TermFrequencyCalc(self):
+    def TermFrequencyCalc(self):
         self.TermFrequency={}
         length = len(self.Tokens)
         
-        for l in self.index:
+        for l in list(self.index.keys()):
             
             self.TermFrequency[l]= (self.index[l]/length)
-
             
             
         return self.TermFrequency    
 
     def Obj(self):
         doc ={
-            'name':self.name,
-            'path':self.path,
+            'content':self.content,
+            
             'TermFrequency':self.TermFrequency
             }  
 
-        return doc           
+        return doc      
