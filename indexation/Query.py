@@ -8,8 +8,8 @@ class query:
     def __init__(self,Query):
         self.content= Query
         self.__tokinize()
-        #self.__indexation()
-        #self.__TermFrequencyCalc()
+        self.indexation()
+        self.TermFrequencyCalc()
 
     def __StopWord(self):
         #self.Tokens

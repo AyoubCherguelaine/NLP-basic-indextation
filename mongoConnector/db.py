@@ -68,6 +68,9 @@ class db :
             print('Err')
 
          
+    def GetIds(self,colName):
+        col = self.db.get_collection(colName)
+        return col.distinct('_id')     
 
                 
 
